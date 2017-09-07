@@ -1,6 +1,6 @@
 FROM debian:stable
 ENV VERSION 2.1.19
-MAINTAINER Sam <scd.downey@gmail.com
+MAINTAINER Sam
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y btrfs-tools apt-utils \
 	sqlite3 libcrypto++9 libcurl3 libfuse2 \
