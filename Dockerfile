@@ -1,9 +1,9 @@
 FROM debian:stable
-ENV VERSION 2.1.19
-MAINTAINER Sam
+ENV VERSION 2.0.38
+MAINTAINER Claus Strasburger <claus@strasburger.de>
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y btrfs-tools apt-utils \
-	sqlite3 libcurl3 libfuse2 \
+	sqlite3 libcrypto++9 libcurl3 libfuse2 \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*
 ADD https://www.urbackup.org/downloads/Server/${VERSION}/debian/stable/urbackup-server_${VERSION}_amd64.deb /root/install.deb
 RUN echo /var/urbackup | dpkg -i /root/install.deb && rm /root/install.deb
